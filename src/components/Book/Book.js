@@ -1,22 +1,37 @@
-import React, { Component } from 'react'
-import { Content, Image, Detail, Title, Author } from "./styles"
+import React, { useState } from 'react'
+import { card } from '../../motion/variants';
+import { Card, Image, Detail, Title, Author } from "./styles"
+import CardOverlay from "./CardOverlay/CardOverlay"
 
-class Book extends Component {
+const Book = (props) => {
 
+    const [isHovered, setIsHovered] = useState(false)
+
+    const quickViewOverlay = isHovered && <CardOverlay itemId={props.book.id} />;
+
+    const onMouseOverHandler = () => {
+        setIsHovered(true);
+    };
     
+    const onMouseLeaveHandler = () => {
+        setIsHovered(false);
+    };
 
-    render() {
-        console.log(this.props.book)
-        return (
-            <Content>
-                <Image src={this.props.book.imageURL} alt={this.props.book.title} />
-                <Detail>
-                    <Title>{this.props.book.title}</Title>
-                    <Author>{this.props.book.author}</Author>
-                </Detail>
-            </Content>
-        )
-    }
+    return (
+        <Card
+            layout
+            variant={card}
+            onMouseOver={onMouseOverHandler}
+            onMouseLeave={onMouseLeaveHandler}    
+        >
+            {quickViewOverlay}
+            <Image src={props.book.imageURL} alt={props.book.title} />
+            <Detail>
+                <Title>{props.book.title}</Title>
+                <Author>{props.book.author}</Author>
+            </Detail>
+        </Card>
+    )
 }
 
 export default Book

@@ -3,4 +3,12 @@ body {
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
+}
+
+:root {
+    --primary-color: #ff8c42;
+    --secondary-color: #fcaf58;
+    --faded-color: #f9c784;
+    --search-color: #495057;
+    --card-color: #cfdbd5;
+}

@@ -13,7 +13,7 @@ class BookList extends Component {
         return (
             <Wrapper>
                 <Title>
-                    <h2>BookFolio</h2>
+                    BookFolio
                 </Title>
                 <BooksList>
                     {bookList}
