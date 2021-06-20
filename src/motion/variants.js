@@ -9,7 +9,7 @@ export const card = {
     },
   };
   
-  export const books = {
+  export const bookCards = {
     visible: {
         transition: { staggerChildren: 0.075, delayChildren: 0.05 },
       },

@@ -12,7 +12,7 @@ export const Backdrop = styled.div`
   border-radius: inherit;
   width: 100%;
   height: 100%;
-  background-color: rgba(248, 248, 248, 0.75);
+  background-color: rgba(180, 180, 180, 0.75);
   backdrop-filter: blur(2px);
 `;
 
