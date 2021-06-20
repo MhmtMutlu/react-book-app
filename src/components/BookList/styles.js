@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion"
 
 export const Wrapper = styled.div`
     max-width: 1440px;
@@ -27,7 +28,7 @@ export const Title = styled.h3`
     color: var(--primary-color);
 `
 
-export const BooksList = styled.div`
+export const BooksList = styled(motion.div)`
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
 
