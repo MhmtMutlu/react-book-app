@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { motion } from "framer-motion"
 
+export const WrapperSection = styled.section`
+    margin: 0;
+    padding: 0;
+`
+
 export const Wrapper = styled.div`
     max-width: 1440px;
     margin: auto;

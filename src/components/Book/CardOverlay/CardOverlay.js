@@ -7,20 +7,31 @@ import {
   Icon
 } from "./styles.js"
 import { faSearchPlus } from '@fortawesome/free-solid-svg-icons'
+import { ThemeContext } from "../../../contexts/ThemeContext"
 
 
 
-const ProductOverlay = (props) => {
+class CardOverlay extends React.Component {
 
-  return (
-    <Backdrop>
-        <WrapperContainer variants={bookOverlayContainer}>
-            <WrapperLink href="/">
-                <Icon icon={faSearchPlus} size="5x"></Icon>
-            </WrapperLink>
-        </WrapperContainer>
-    </Backdrop>
-  );
+  render() {
+    return (
+      <ThemeContext.Consumer>
+        {(contextTheme) => {
+          const { isDarkTheme, dark, light } = contextTheme
+          const theme = isDarkTheme ? dark : light
+          return (
+            <Backdrop style={{background: theme.hover}}>
+                <WrapperContainer variants={bookOverlayContainer}>
+                    <WrapperLink href="/">
+                        <Icon style={{color: theme.search}} icon={faSearchPlus} size="5x"></Icon>
+                    </WrapperLink>
+                </WrapperContainer>
+            </Backdrop>
+          );
+        }}
+      </ThemeContext.Consumer>
+    )
+  }
 };
 
-export default ProductOverlay;
+export default CardOverlay;

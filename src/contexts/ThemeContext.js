@@ -7,19 +7,23 @@ class ThemeContextProvider extends React.Component {
         isDarkTheme: true,
         dark: {
             bg: "#222529",
-            txt: "#d65f5f",
-            hover: "rgba(248,248,248,0.75)"
+            txt: "#e8eddf",
+            hover: "rgba(120,120,120,0.75)",
+            shadow: "1px 10px 18px #343a40",
+            search: "#ced4da"
         },
         light: {
-            bg: "#222529",
-            txt: "#d65f5f",
-            hover: "rgba(248,248,248,0.75)"
+            bg: "#ffffff",
+            txt: "#222529",
+            hover: "rgba(248,248,248,0.75)",
+            shadow: "1px 10px 18px #adb5bd",
+            search: "#495057"
         }
     }
 
     render() {
         return (
-            <ThemeContext.Provider value={this.state}>
+            <ThemeContext.Provider value={{...this.state}}>
                 {this.props.children}
             </ThemeContext.Provider>
         )

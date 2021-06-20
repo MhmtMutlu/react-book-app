@@ -1,33 +1,43 @@
 import React, { Component } from 'react'
 import { bookCards } from '../../motion/variants.js'
 import Book from "../Book/Book.js"
-import { Wrapper, Title, BooksList } from "./styles"
+import { Wrapper, Title, BooksList, WrapperSection } from "./styles"
 import { BookContext } from "../../contexts/BookContext"
+import { ThemeContext } from "../../contexts/ThemeContext"
 
 class BookList extends Component {
 
     render() {
         return (
-            <BookContext.Consumer>
-                {value => {
-                    return (
-                        <Wrapper>
-                            <Title>
-                                BookFolio
-                            </Title>
-                            <BooksList 
-                                variant={bookCards}
-                                initial="hidden"
-                                animate="visible"
-                            >
-                                {value.books.map((book, index) => {
-                                    return <Book book={book} key={index} />
-                                })}
-                            </BooksList>
-                        </Wrapper>
-                    )
-                }}
-            </BookContext.Consumer>
+            <ThemeContext.Consumer>
+                {(contextTheme) => (
+                    <BookContext.Consumer>
+                        {contextBook => {
+                            const { books } = contextBook
+                            const { isDarkTheme, dark, light } = contextTheme
+                            const theme = isDarkTheme ? dark : light
+                            return (
+                                <WrapperSection style={{background: theme.bg, color: theme.txt}}>
+                                    <Wrapper>
+                                        <Title>
+                                            BookFolio
+                                        </Title>
+                                        <BooksList 
+                                            variant={bookCards}
+                                            initial="hidden"
+                                            animate="visible"
+                                        >
+                                            {books.map((book, index) => {
+                                                return <Book book={book} key={index} />
+                                            })}
+                                        </BooksList>
+                                    </Wrapper>
+                                </WrapperSection>
+                            )
+                        }}
+                    </BookContext.Consumer>
+                )}
+            </ThemeContext.Consumer>
         )
     }
 }

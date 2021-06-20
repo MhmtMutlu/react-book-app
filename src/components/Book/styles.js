@@ -8,7 +8,6 @@ export const Card = styled(motion.div)`
     padding: 0.5rem;
     margin: 2rem 0 2rem 2.5rem;
     border-radius: 3rem;
-    box-shadow: 1px 10px 18px #e3e3e3;
 `
 
 export const Image = styled.img`
