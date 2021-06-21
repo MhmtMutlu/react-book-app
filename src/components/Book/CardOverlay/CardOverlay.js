@@ -23,7 +23,7 @@ class CardOverlay extends React.Component {
             <Backdrop style={{background: theme.hover}}>
                 <WrapperContainer variants={bookOverlayContainer}>
                     <WrapperLink href="/">
-                        <Icon style={{color: theme.search}} icon={faSearchPlus} size="5x"></Icon>
+                        <Icon style={{color: theme.txt}} icon={faSearchPlus} size="5x"></Icon>
                     </WrapperLink>
                 </WrapperContainer>
             </Backdrop>

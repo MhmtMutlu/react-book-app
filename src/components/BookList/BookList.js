@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { bookCards } from '../../motion/variants.js'
 import Book from "../Book/Book.js"
-import { Wrapper, Title, BooksList, WrapperSection } from "./styles"
+import { Wrapper, BooksList, WrapperSection } from "./styles"
 import { BookContext } from "../../contexts/BookContext"
 import { ThemeContext } from "../../contexts/ThemeContext"
 
@@ -19,9 +19,6 @@ class BookList extends Component {
                             return (
                                 <WrapperSection style={{background: theme.bg, color: theme.txt}}>
                                     <Wrapper>
-                                        <Title>
-                                            BookFolio
-                                        </Title>
                                         <BooksList 
                                             variant={bookCards}
                                             initial="hidden"
