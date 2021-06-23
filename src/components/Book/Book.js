@@ -8,7 +8,7 @@ const Book = (props) => {
 
     const [isHovered, setIsHovered] = useState(false)
 
-    const quickViewOverlay = isHovered && <CardOverlay itemId={props.book.id} />;
+    const quickViewOverlay = isHovered && <CardOverlay bookRank={props.book.rank} />;
 
     const onMouseOverHandler = () => {
         setIsHovered(true);

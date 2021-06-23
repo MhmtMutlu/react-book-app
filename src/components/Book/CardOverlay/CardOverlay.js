@@ -8,12 +8,12 @@ import {
 } from "./styles.js"
 import { faSearchPlus } from '@fortawesome/free-solid-svg-icons'
 import { ThemeContext } from "../../../contexts/ThemeContext"
+import { useLocation } from "react-router-dom"
 
+const CardOverlay = ({ bookRank }) => {
 
+  const location = useLocation()
 
-class CardOverlay extends React.Component {
-
-  render() {
     return (
       <ThemeContext.Consumer>
         {(contextTheme) => {
@@ -22,7 +22,10 @@ class CardOverlay extends React.Component {
           return (
             <Backdrop style={{background: theme.hover}}>
                 <WrapperContainer variants={bookOverlayContainer}>
-                    <WrapperLink href="/">
+                    <WrapperLink to={{
+                      pathname: `/detail/${bookRank}`,
+                      state: { background: location },
+                    }}>
                         <Icon style={{color: theme.txt}} icon={faSearchPlus} size="5x"></Icon>
                     </WrapperLink>
                 </WrapperContainer>
@@ -31,7 +34,6 @@ class CardOverlay extends React.Component {
         }}
       </ThemeContext.Consumer>
     )
-  }
 };
 
 export default CardOverlay;

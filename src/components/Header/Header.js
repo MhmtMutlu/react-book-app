@@ -14,7 +14,7 @@ class Header extends React.Component {
                     <Wrapper style={{backgroundColor: theme.bg, color: theme.txt}}>
                         <LeftArea>
                             <Icon style={{color: theme.txt}} icon={faBookOpen} size="5x" />
-                            <Title>BookFolio</Title>
+                            <Title>NYTimes Books</Title>
                         </LeftArea>
                         <SearchBar style={{backgroundColor: theme.txt, color: theme.bg}} type="search"/>
                         <ThemeToggleButton style={{backgroundColor: theme.txt}} type="button" onClick={changeTheme}>

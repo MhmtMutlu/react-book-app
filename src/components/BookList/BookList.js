@@ -6,7 +6,8 @@ import { BookContext } from "../../contexts/BookContext"
 import { ThemeContext } from "../../contexts/ThemeContext"
 
 const BookList = () => {
-    const books = useContext(BookContext)
+    const { books } = useContext(BookContext)
+    const book = books
         return (
             <ThemeContext.Consumer>
                 {(contextTheme) => {
@@ -20,7 +21,7 @@ const BookList = () => {
                                     initial="hidden"
                                     animate="visible"
                                 >
-                                    {books?.map((book, index) => {
+                                    {book?.map((book, index) => {
                                         return <Book book={book} key={index} />
                                     })}
                                 </ListOfBooks>

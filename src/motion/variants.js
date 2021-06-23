@@ -23,3 +23,14 @@ export const card = {
       y: 20,
     },
   };
+
+  export const modal = {
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+    hidden: {
+      y: 25,
+      opacity: 0,
+    },
+  };
