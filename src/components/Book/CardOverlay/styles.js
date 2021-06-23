@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import styled from "styled-components"
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Backdrop = styled.div`
@@ -16,7 +17,7 @@ export const Backdrop = styled.div`
   backdrop-filter: blur(2px);
 `;
 
-export const WrapperLink = styled.a`
+export const WrapperLink = styled(Link)`
   display: flex;
   flex-direction: column;
   text-decoration: none;
