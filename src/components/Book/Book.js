@@ -34,7 +34,7 @@ const Book = (props) => {
                         style={{boxShadow: theme.shadow}}
                     >
                         {quickViewOverlay}
-                        <Image src={props.book.imageURL} alt={props.book.title} />
+                        <Image src={props.book.book_image} alt={props.book.title} />
                         <Detail>
                             <Title>{props.book.title}</Title>
                             <Author>{props.book.author}</Author>

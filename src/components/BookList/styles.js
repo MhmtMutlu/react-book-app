@@ -33,7 +33,7 @@ export const Title = styled.h3`
     color: var(--primary-color);
 `
 
-export const BooksList = styled(motion.div)`
+export const ListOfBooks = styled(motion.div)`
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
 
