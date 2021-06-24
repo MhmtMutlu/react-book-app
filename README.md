@@ -2,6 +2,8 @@
 
 In this project, I made practices about my learning outcomes. I tried to use some libraries which are styled component, framer motion, etc. in this project. Besides, I used New York Times Book API and listed current bestsellers.
 
+<a href="https://ny-times-best-sellers.netlify.app">Go to Website</a>
+
 # 🧰 Toolbox
 
 <ul style="list-style-type:disc">
