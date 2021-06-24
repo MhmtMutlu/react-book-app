@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 export const WrapperSection = styled.section`
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 `
 
 export const Wrapper = styled.div`

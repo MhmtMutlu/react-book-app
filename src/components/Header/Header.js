@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { faBookOpen, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { Wrapper, SearchBar, Icon, Title, LeftArea, ThemeToggleButton, ButtonIcon } from "./styles";
 import { ThemeContext } from "../../contexts/ThemeContext"
+import { BookContext } from "../../contexts/BookContext";
 
-class Header extends React.Component {
-    render() {
+const Header = () => {
+    const {searchBook} = useContext(BookContext)
         return (
             <ThemeContext.Consumer>
                 {contextTheme => {
@@ -16,7 +17,7 @@ class Header extends React.Component {
                             <Icon style={{color: theme.txt}} icon={faBookOpen} size="5x" />
                             <Title>NYTimes Books</Title>
                         </LeftArea>
-                        <SearchBar style={{backgroundColor: theme.txt, color: theme.bg}} type="search"/>
+                        <SearchBar style={{backgroundColor: theme.txt, color: theme.bg}} type="search" onChange={searchBook} placeholder="Search for book in bestsellers..."/>
                         <ThemeToggleButton style={{backgroundColor: theme.txt}} type="button" onClick={changeTheme}>
                             <ButtonIcon style={{color: theme.bg, display: theme.lightDisplay}} icon={faMoon} size="3x" />
                             <ButtonIcon style={{color: theme.bg, display: theme.darkDisplay}} icon={faSun} size="3x" />
@@ -24,8 +25,7 @@ class Header extends React.Component {
                     </Wrapper> 
                 )}}
             </ThemeContext.Consumer>
-        );
-    }
+        )
 };
 
 export default Header;
